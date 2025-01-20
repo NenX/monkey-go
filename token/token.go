@@ -20,6 +20,10 @@ const (
 	// Identifiers + literals
 	IDENT // add, foobar, x, y, ...
 	INT   // 1343456
+	STRING
+	LBRACKET
+	RBRACKET
+	COLON
 	// Operators
 	ASSIGN
 	PLUS
@@ -37,7 +41,7 @@ const (
 	LBRACE
 	RBRACE
 
-	// Keywords
+	// Keywords 开始
 	keyword_beg
 	FUNCTION
 	LET
@@ -47,6 +51,7 @@ const (
 	ELSE
 	RETURN
 	keyword_end
+	// Keywords 结束
 
 	EQ
 	NOT_EQ
@@ -55,8 +60,12 @@ const (
 var keywords map[string]TokenType
 var Tokens = [...]string{
 	// Identifiers + literals
-	IDENT: "IDENT", // add
-	INT:   "INT",   // 1343456
+	IDENT:    "IDENT", // add
+	INT:      "INT",   // 1343456
+	STRING:   "STRING",
+	LBRACKET: "[",
+	RBRACKET: "]",
+	COLON:    ":",
 	// Operators
 	ASSIGN:   "=",
 	PLUS:     "+",

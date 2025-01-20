@@ -7,16 +7,7 @@ import (
 	"os/user"
 )
 
-func main() {
-	args := os.Args
-	if len(args) > 1 {
-		arg1 := args[1]
-		err := repl.RunFile(arg1)
-		if err != nil {
-			fmt.Printf("Error running file: %s\n", err)
-		}
-		return
-	}
+func main1() {
 	user, err := user.Current()
 	if err != nil {
 		panic(err)
